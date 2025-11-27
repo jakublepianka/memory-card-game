@@ -3,25 +3,60 @@ import { CardsContainer } from "./CardsContainer";
 const url = "https://dog.ceo/api/breeds/image/random/4";
 
 export function GameContainer() {
-  const [images, setImages] = useState([]);
+  const [imageObjs, setImageObjs] = useState([]);
 
+  // move into a separate module?
   useEffect(() => {
     let ignore = false;
 
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        if (!ignore) setImages(data.message);
+        if (!ignore)
+          setImageObjs(() => {
+            const imgList = [];
+            data.message.forEach((url, index) => {
+              imgList.push({
+                isClicked: false,
+                order: index,
+                url: url,
+              });
+            });
+            return imgList;
+          });
       });
     return () => {
       ignore = true;
     };
   }, []);
 
+  function shuffle(array) {
+    let arrLength = array.length,
+      temp,
+      randomIndex;
+    while (arrLength) {
+      randomIndex = Math.floor(Math.random() * arrLength--);
+      temp = array[arrLength].order;
+      array[arrLength].order = array[randomIndex].order;
+      array[randomIndex].order = temp;
+    }
+    return array;
+  }
+
+  // count unique card clicks
+  // reset the count when a card has been clicked more than once
   return (
     <div className="game-container">
-      {images.length && <CardsContainer imgUrls={images}></CardsContainer>}
+      {imageObjs.length && (
+        <CardsContainer
+          imageObjs={imageObjs}
+          onCardClick={() =>
+            setImageObjs((prev) => {
+              return shuffle([...prev]);
+            })
+          }
+        ></CardsContainer>
+      )}
     </div>
   );
 }
