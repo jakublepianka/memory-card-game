@@ -21,7 +21,7 @@ export function GameContainer() {
 
   return (
     <div className="game-container">
-      <CardsContainer imgUrls={images}></CardsContainer>
+      {images.length && <CardsContainer imgUrls={images}></CardsContainer>}
     </div>
   );
 }
