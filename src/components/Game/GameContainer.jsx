@@ -1,36 +1,38 @@
 import { useState, useEffect } from "react";
 import { CardsContainer } from "./CardsContainer";
+import { useImageFetcher } from "../hooks/useImageFetcher";
 const url = "https://dog.ceo/api/breeds/image/random/4";
 
 export function GameContainer() {
-  const [imageObjs, setImageObjs] = useState([]);
+  const imageObjs = useImageFetcher(url);
+  // const [imageObjs, setImageObjs] = useState([]);
   const [highScore, setHighScore] = useState(0);
-  const currentScore = countUniqueClicks();
+  // const currentScore = countUniqueClicks();
 
   // move into a separate module?
-  useEffect(() => {
-    let ignore = false;
+  // useEffect(() => {
+  //   let ignore = false;
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        if (!ignore)
-          setImageObjs(() => {
-            const imageList = [];
-            data.message.forEach((url, index) => {
-              imageList.push({
-                isClicked: false,
-                order: index,
-                url: url,
-              });
-            });
-            return imageList;
-          });
-      });
-    return () => {
-      ignore = true;
-    };
-  }, []);
+  //   fetch(url)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (!ignore)
+  //         setImageObjs(() => {
+  //           const imageList = [];
+  //           data.message.forEach((url, index) => {
+  //             imageList.push({
+  //               isClicked: false,
+  //               order: index,
+  //               url: url,
+  //             });
+  //           });
+  //           return imageList;
+  //         });
+  //     });
+  //   return () => {
+  //     ignore = true;
+  //   };
+  // }, []);
 
   function handleCardClick(e) {
     const clickedImgUrl = e.currentTarget.getAttribute("data-url");
@@ -54,7 +56,7 @@ export function GameContainer() {
       array[arrLength].order = array[randomIndex].order;
       array[randomIndex].order = temp;
     }
-    return array;
+    return [...array];
   }
 
   function countUniqueClicks() {
@@ -93,13 +95,13 @@ export function GameContainer() {
     <div className="game-container">
       <h1>Score</h1>
       <p>
-        Current score: <b>{currentScore}</b>
+        {/* Current score: <b>{currentScore}</b> */}
       </p>
       <p>
         High score:{" "}
-        <b>{isHighScore() ? setHighScore(currentScore) : highScore}</b>
+        <b>{/*isHighScore() ? setHighScore(currentScore) : */highScore}</b>
       </p>
-      {imageObjs.length && (
+      {imageObjs.length > 0 && (
         <CardsContainer
           imageObjs={imageObjs}
           onCardClick={handleCardClick}
