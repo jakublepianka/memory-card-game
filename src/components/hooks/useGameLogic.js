@@ -48,10 +48,16 @@ export function useGameLogic(imageList) {
     return currentScore >= highScore;
   }
 
+  function resetHighScore(){
+    setHighScore(0);
+  }
+
   return {
     imageObjs,
     currentScore,
     highScore,
     handleCardClick,
+    resetImageObjs,
+    resetHighScore
   };
 }
