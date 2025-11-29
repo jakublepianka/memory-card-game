@@ -1,6 +1,6 @@
 import { AnimaContainer } from "./AnimalContainer";
 import { DifficultyContainer } from "./DifficultyContainer";
-import "../../styles/modal.css";
+import "../../styles/ChoiceModal.css";
 
 export function ChoiceModal({ onConfirmChoice, onClose }) {
   return (
