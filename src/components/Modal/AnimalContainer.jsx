@@ -1,22 +1,40 @@
+import { useState } from "react";
+import "../../styles/AnimalContainer.css";
+
 export function AnimaContainer() {
+  const [isCats, setIsCats] = useState(true);
+
+  function handleCheck() {
+    setIsCats((prev) => !prev);
+  }
+
   return (
     <div className="api-choice-container">
-      <p>Card images</p>
-
-      <div className="animal-radio-wrapper">
-        <div className="highlight"></div>
-        <div className="custom-radio-container">
-          <input
-            type="radio"
-            value="https://api.thecatapi.com/v1/images/search?limit=~&api_key=live_OJC8ftKSMLZ9BW8PASwtf2XLRSA0lCd4i14sCmpbR3hfN1tlNsS7dXr62mfvOPln"
-            name="urlBase"
-          ></input>
+      <h2>Card Images</h2>
+      <div className="animal-checkbox-wrapper">
+        <div
+          className="animal-highlight"
+          style={{
+            transform: `translateX(${isCats ? 0 : 84}px) translateY(1px)`,
+          }}
+        ></div>
+        <div
+          className="text-value"
+          style={{ transform: `translateX(${isCats ? 60 : 25}px)` }}
+        >
+          {isCats ? "Cats" : "Dogs"}
         </div>
-        <div className="custom-radio-container">
+        <div className="custom-checkbox-container">
           <input
-            type="radio"
-            value="https://dog.ceo/api/breeds/image/random/~"
+            type="checkbox"
+            value={
+              isCats
+                ? "https://api.thecatapi.com/v1/images/search?limit=~&api_key=live_OJC8ftKSMLZ9BW8PASwtf2XLRSA0lCd4i14sCmpbR3hfN1tlNsS7dXr62mfvOPln"
+                : "https://dog.ceo/api/breeds/image/random/~"
+            }
             name="urlBase"
+            onChange={handleCheck}
+            checked={isCats}
           ></input>
         </div>
       </div>
