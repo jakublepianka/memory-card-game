@@ -1,0 +1,42 @@
+.animal-checkbox-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+}
+
+.animal-checkbox-wrapper {
+  width: 130px;
+  margin: 16px auto 0;
+  border: 2px solid var(--orange);
+  border-radius: 24px;
+}
+
+.animal-highlight {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  height: 38px;
+  width: 38px;
+  background-color: var(--orange);
+  border-radius: 38px;
+  transform: translateY(1px);
+  transition: transform 0.25s;
+}
+
+.text-value {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  font-size: 22px;
+  height: 38px;
+  width: 38px;
+  padding: 7px 0;
+  transition: transform 0.25s;
+}
+
+.animal-checkbox-wrapper input {
+  opacity: 0;
+  width: 130px;
+  height: 40px;
+}
