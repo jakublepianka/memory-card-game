@@ -2,6 +2,7 @@ import { GameContainer } from "./components/Game/GameContainer";
 import { ChoiceModal } from "./components/Modal/ChoiceModal";
 import { useState } from "react";
 import "./styles/App.css";
+import settingsIcon from "./assets/settings.png";
 
 function App() {
   const [gameChoice, setGameChoice] = useState("");
@@ -10,19 +11,34 @@ function App() {
   function handleChoice(e) {
     e.preventDefault();
     const data = new FormData(e.target);
-    const { urlBase, difficulty } = Object.fromEntries(data); 
+    const { urlBase, difficulty } = Object.fromEntries(data);
     const newGamePreference = urlBase.replace("~", difficulty);
-    setGameChoice(newGamePreference)
+    setGameChoice(newGamePreference);
   }
 
-  function closeModal(){
-    setIsModalActive(false);
+  function toggleModal() {
+    setIsModalActive((prev) => !prev);
   }
 
   return (
     <>
-      {isModalActive && <ChoiceModal onConfirmChoice={handleChoice} onClose={closeModal}></ChoiceModal>}
-      <GameContainer url={gameChoice}></GameContainer>
+      <button
+        className="settings-button"
+        onClick={toggleModal}
+        tabIndex="0"
+        disabled={isModalActive}
+      >
+        <img src={settingsIcon}></img>
+      </button>
+      {isModalActive && (
+        <ChoiceModal
+          onConfirmChoice={handleChoice}
+          onClose={toggleModal}
+        ></ChoiceModal>
+      )}
+      <main>
+        {gameChoice !== "" && <GameContainer url={gameChoice}></GameContainer>}
+      </main>
     </>
   );
 }
