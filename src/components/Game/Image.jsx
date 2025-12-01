@@ -1,7 +1,3 @@
 export function Image({ imgUrl }) {
-  return (
-    <img
-      src={imgUrl}
-    ></img>
-  );
+  return <img src={imgUrl}></img>;
 }

@@ -14,7 +14,10 @@ export function DifficultyContainer() {
 
   return (
     <div className="difficulty-choice-container">
-      <h2>Difficulty</h2><div className="info" title="Number of cards"><p>i</p></div>
+      <h2>Difficulty</h2>
+      <div className="info" title="Number of cards">
+        <p>i</p>
+      </div>
       <div className="difficulty-radio-wrapper">
         <div className="radio-container">
           <div className="custom-radio-wrapper">

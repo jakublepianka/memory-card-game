@@ -24,7 +24,7 @@
   }
 
   .cards-container:not(:has(:nth-child(17))) {
-    grid-template-columns: repeat(4,  minmax(120px, 1fr));
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
   }
 
   .cards-container:not(:has(:nth-child(9))) {
@@ -34,7 +34,7 @@
 }
 
 @media (min-width: 800px) {
-    .cards-container {
+  .cards-container {
     grid-template-columns: repeat(6, minmax(120px, 1fr));
   }
 }

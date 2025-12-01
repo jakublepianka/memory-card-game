@@ -17,7 +17,9 @@ export function ChoiceModal({ onConfirmChoice, onClose }) {
           <AnimaContainer></AnimaContainer>
           <DifficultyContainer></DifficultyContainer>
           <div className="modal-buttons">
-            <button className="submit-button" type="submit">Submit</button>
+            <button className="submit-button" type="submit">
+              Submit
+            </button>
             <button className="cancel-button" type="reset" onClick={onClose}>
               Cancel
             </button>

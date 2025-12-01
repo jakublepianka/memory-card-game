@@ -17,7 +17,7 @@ export function useGameLogic(imageList) {
     );
     if (!imageObjs[clickedImgIndex].isClicked) {
       toggleClickStatus(clickedImgIndex);
-      if (isHighScore(currentScore)) setHighScore(prev => prev + 1);
+      if (isHighScore(currentScore)) setHighScore((prev) => prev + 1);
     } else {
       resetImageObjs();
     }
@@ -48,7 +48,7 @@ export function useGameLogic(imageList) {
     return currentScore >= highScore;
   }
 
-  function resetHighScore(){
+  function resetHighScore() {
     setHighScore(currentScore);
   }
 
@@ -58,6 +58,6 @@ export function useGameLogic(imageList) {
     highScore,
     handleCardClick,
     resetImageObjs,
-    resetHighScore
+    resetHighScore,
   };
 }

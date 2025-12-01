@@ -27,7 +27,9 @@ export function GameContainer({ url }) {
           imageObjs={imageObjs}
           onCardClick={handleCardClick}
         ></CardsContainer>
-      ) : <div className="spinner"></div>}
+      ) : (
+        <div className="spinner"></div>
+      )}
     </div>
   );
 }

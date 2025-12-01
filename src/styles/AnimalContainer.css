@@ -7,7 +7,7 @@
 
 .animal-checkbox-wrapper {
   width: 130px;
-  margin: 16px auto 0;
+  margin: 8px auto 0;
   border: 2px solid var(--orange);
   border-radius: 24px;
 }
