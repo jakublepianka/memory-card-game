@@ -1,0 +1,36 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -90%);
+
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -70%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce { 
+  0% {
+    transform:  translate(-50%, -50%) scale(0.2);
+  } 
+
+  70% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

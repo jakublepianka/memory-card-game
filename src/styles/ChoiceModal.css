@@ -38,7 +38,7 @@
 
 .modal-buttons {
   display: flex;
-  margin: 0 auto;
+  margin: 16px auto;
 }
 
 .modal-buttons button {
@@ -55,27 +55,4 @@
 
 .cancel-button {
   border-radius: 0 24px 24px 0;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -90%);
-
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(-50%, -70%);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
