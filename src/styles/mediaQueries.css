@@ -51,7 +51,7 @@
   }
 
   .cards-container:not(:has(:nth-child(9))) {
-    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    grid-template-columns: repeat(4, minmax(120px, 33dvh));
   }
 
   .card-container:hover {
