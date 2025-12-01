@@ -1,0 +1,60 @@
+@media (hover: hover) and (pointer: fine) {
+
+  button:hover,
+  button:focus,
+  button:focus-visible {
+    border-color: var(--black);
+    transform: scale(1.1);
+  }
+
+  .card-container:hover {
+    transform: translate(6px, -6px);
+  }
+
+  input[type="checkbox"]:hover,
+  input[type="radio"]:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    padding: 16px;
+  }
+
+  .cards-container:not(:has(:nth-child(17))) {
+    grid-template-columns: repeat(4,  minmax(120px, 1fr));
+  }
+
+  .cards-container:not(:has(:nth-child(9))) {
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+  }
+
+}
+
+@media (min-width: 800px) {
+    .cards-container {
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards-container {
+    grid-template-columns: repeat(6, max(17dvh));
+    gap: 24px;
+    padding: 32px;
+  }
+
+  .cards-container:not(:has(:nth-child(17))) {
+    grid-template-columns: repeat(4, max(170px));
+  }
+
+  .cards-container:not(:has(:nth-child(9))) {
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+  }
+
+  .card-container:hover {
+    transform: translate(12px, -12px);
+  }
+}

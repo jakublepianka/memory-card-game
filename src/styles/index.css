@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('/InterVariable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --orange: #fca311ff;
+  --prussian-blue: #14213dff;
+  --white: #ffffffff;
+  --black: #000000ff;
+  --alabaster-grey: #e5e5e5ff;
+  background-color: var(--alabaster-grey);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+}
+
+
+h1,
+h2,
+h3,
 *,
 *::before,
 *::after {
@@ -6,19 +29,23 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 8px 16px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, transform 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: var(--orange);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
