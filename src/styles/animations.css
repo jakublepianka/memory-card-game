@@ -1,13 +1,13 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -90%);
+    transform: translate(-50%, -70%);
 
   }
 
   to {
     opacity: 1;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -50%);
   }
 }
 

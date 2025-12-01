@@ -15,6 +15,12 @@
   input[type="radio"]:hover {
     cursor: pointer;
   }
+
+  @media (min-width: 1200px) {
+    .card-container:hover {
+      transform: translate(12px, -12px);
+    }
+  }
 }
 
 @media (min-width: 600px) {
@@ -54,7 +60,4 @@
     grid-template-columns: repeat(4, minmax(120px, 33dvh));
   }
 
-  .card-container:hover {
-    transform: translate(12px, -12px);
-  }
 }
