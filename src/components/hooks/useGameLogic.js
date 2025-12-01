@@ -49,7 +49,7 @@ export function useGameLogic(imageList) {
   }
 
   function resetHighScore(){
-    setHighScore(0);
+    setHighScore(currentScore);
   }
 
   return {
