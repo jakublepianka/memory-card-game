@@ -1,18 +1,28 @@
+import "../../styles/GameNav.css";
+import resetIcon from "../../assets/refresh.png";
+import shuffleIcon from "../../assets/shuffle.png";
+
 export function GameNav({ currentScore, highScore, onShuffle, onResetScore }) {
   return (
     <div className="game-nav">
       <div className="score-container">
         <div className="current-score">
-          <h2>{currentScore}</h2>
           <div className="label">CURRENT SCORE</div>
+          <h1>{currentScore}</h1>
         </div>
         <div className="high-score">
-          <h2>{highScore}</h2>
           <div className="label">HIGH SCORE</div>
+          <h1>{highScore}</h1>
         </div>
       </div>
-      <button onClick={onShuffle}>Shuffle cards</button>
-      <button onClick={onResetScore}>Reset High score</button>
+      <div className="buttons-container">
+        <button className="reset-button" onClick={onResetScore}>
+          <img src={resetIcon}></img>
+        </button>
+        <button className="shuffle-button" onClick={onShuffle}>
+          <img src={shuffleIcon}></img>
+        </button>
+      </div>
     </div>
   );
 }
