@@ -27,14 +27,17 @@ export function AnimaContainer() {
         <div className="custom-checkbox-container">
           <input
             type="checkbox"
+            onChange={handleCheck}
+            checked={isCats}
+          ></input>
+          <input
+            type="hidden"
+            name="urlBase"
             value={
               isCats
                 ? "https://api.thecatapi.com/v1/images/search?limit=~&api_key=live_OJC8ftKSMLZ9BW8PASwtf2XLRSA0lCd4i14sCmpbR3hfN1tlNsS7dXr62mfvOPln"
                 : "https://dog.ceo/api/breeds/image/random/~"
             }
-            name="urlBase"
-            onChange={handleCheck}
-            checked={isCats}
           ></input>
         </div>
       </div>
