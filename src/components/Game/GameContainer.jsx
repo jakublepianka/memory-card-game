@@ -22,12 +22,12 @@ export function GameContainer({ url }) {
         onShuffle={resetImageObjs}
         onResetScore={resetHighScore}
       ></GameNav>
-      {imageObjs.length > 0 && (
+      {imageObjs.length > 0 ? (
         <CardsContainer
           imageObjs={imageObjs}
           onCardClick={handleCardClick}
         ></CardsContainer>
-      )}
+      ) : <div className="spinner"></div>}
     </div>
   );
 }

@@ -45,6 +45,7 @@ export function useImageFetcher(url) {
 
     return () => {
       ignore = true;
+      setImageObjs([]);
     };
   }, [url]);
 
