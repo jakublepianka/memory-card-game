@@ -1,4 +1,31 @@
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
+ .cards-container {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(90px, 1fr));
+   gap: 8px;
+   padding: 16px 8px;
+   margin: auto;
+ }
+
+ .cards-container:not(:has(:nth-child(17))) {
+   grid-template-columns: repeat(2, minmax(150px, 1fr));
+ }
+
+ .card-container-wrapper {
+   background-color: var(--prussian-blue);
+   border-radius: 4px;
+   animation: fadeIn 0.8s 0.5s backwards;
+ }
+
+ .card-container {
+   border: 2px solid var(--orange);
+   border-radius: 4px;
+   transition: transform 0.25s;
+ }
+
+ .card-container img {
+   display: block;
+   width: 100%;
+   aspect-ratio: 1/1;
+   object-fit: cover;
+   border-radius: 2px;
+ }
