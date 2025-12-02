@@ -28,7 +28,7 @@ export function GameContainer({ url }) {
           onCardClick={handleCardClick}
         ></CardsContainer>
       ) : (
-        <div className="spinner"></div>
+        url !== "" && <div className="spinner"></div>
       )}
     </div>
   );

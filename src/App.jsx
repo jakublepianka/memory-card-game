@@ -37,7 +37,7 @@ function App() {
         ></ChoiceModal>
       )}
       <main>
-        {gameChoice !== "" && <GameContainer url={gameChoice}></GameContainer>}
+        <GameContainer url={gameChoice}></GameContainer>
       </main>
     </>
   );
